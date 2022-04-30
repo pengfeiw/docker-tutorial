@@ -15,5 +15,7 @@
 - [005 Docker Containers](https://pengfeixc.com/tutorial/docker/docker-containers)
 - [006 Docker Volumes](https://pengfeixc.com/tutorial/docker/docker-volumes)
 - [007 Docker networks](https://pengfeixc.com/tutorial/docker/docker-networks)
+- [008 清理旧数据](https://pengfeixc.com/tutorial/docker/how-to-clean-docker)
+- [009 Docker Compose](https://pengfeixc.com/tutorial/docker/compose)
 
 （未完待续）
