@@ -1,6 +1,6 @@
 # Docker images
 
-Docker images 包含了 Docker containers 可以使用的代码和指令，Docker containers 可以通过 Docker images 知道如何设置应用的运行环境。
+Docker images 包含了 Docker containers 可以使用的代码和指令，Docker containers 从 Docker images 中获取如何设置应用运行环境的相关信息。
 
 ## 创建和标记 images
 
@@ -51,7 +51,7 @@ my-app                 1.0                 964baf4833d3        46 minutes ago   
 
 ## 显示 images 列表
 
-使用 `docker images` 或者 `docker image ls` 命令展示 Docker host 上所有的 iamges。
+使用 `docker images` 或者 `docker image ls` 命令展示 Docker host 上所有的 images。
 
 ```bash
 $ docker images
@@ -65,6 +65,8 @@ my-app                 1.0                 964baf4833d3        46 minutes ago   
 ## Image registries 和 pulling/pushing images
 
 Docker images 存储在远程 Docker **image registries**，默认的 Docker image registry 是 [**Docker Hub**](https://hub.docker.com/)。Docker image registries 提供 Docker images 的存储和下载功能，你可以从 Docker image registries 上下载 images，然后在 Docker container 中运行。
+
+> Docker image registry 的作用和 github 类似，你可以在 github 上下载和上传代码。
 
 使用 `docker pull` 命令，从 Docker Hub 上拉取（pull）image：
 ```bash
@@ -108,7 +110,7 @@ $ docker login --username robertcooper
 
 执行上面的命令，会提示你输入用户密码，如果成功了，那么你可以将本地 images 推送到 Docker Hub 的 `robertcooper` 账户。如果你需要下载私有的仓库，那么你也需要使用 `docker login` 登录账号。
 
-Docker Hub 并不是唯一的 image registry，同样也有很多其他的 iamges registry：
+Docker Hub 并不是唯一的 image registry，同样也有很多其他的 images registry：
 
 - [Amazon ECR](https://aws.amazon.com/cn/ecr/)
 - [Google Cloud Container Registry](https://cloud.google.com/container-registry)
@@ -152,7 +154,7 @@ $ docker rmi $(docker images -a -q) -f  # same as above, but forces the images a
 
 ## 保存和加载 images
 
-我们可以将 Docker image 保存到一个文件，然后重新加载到另一个 Docker host。我们通常需要这种功能，例如，一个 CI check 创建了一个 Docker image，在另一个 CI check 中需要使用相同的 image。我们除了将 image 上传到仓库，然后再另一个 CI check 中下载下来，还可以将 image 保存成文件，然后再另一个 CI check 中加载这个 image 文件。
+我们可以将 Docker image 保存到一个文件，然后重新加载到另一个 Docker host。我们通常需要这种功能，例如，一个 CI check 创建了一个 Docker image，在另一个 CI check 中需要使用相同的 image。我们除了将 image 上传到仓库，然后在另一个 CI check 中下载下来，还可以将 image 保存成文件，然后在另一个 CI check 中加载这个 image 文件。
 
 使用 `docker save` 命令，保存 Docker image：
 ```bash
