@@ -1,6 +1,6 @@
 # Dockerfile
 
-**Dockerfile** 是一个包含了如何创建一个 image 的指示的文件。文件开头通常指定用于创建这个 image 所使用的 **base image**。例如，想要创建一个基于 python 的 API，可以使用安装了 python 的 Linux 系统组成的 base image。指定了 base image 后，其他指令需要指定以下信息：
+**Dockerfile** 是一个包含了如何创建一个 image 的指令的文件。文件开头通常指定用于创建这个 image 所使用的 **base image**。例如，想要创建一个基于 python 的 API，可以使用安装了 python 的 Linux 系统组成的 base image。指定了 base image 后，其他指令需要指定以下信息：
 
 - container 需要设置的环境变量
 - image 暴露的端口
@@ -9,7 +9,7 @@
 - 运行 container 需要的命令（e.g `yarn start`）
 - 更多其他信息...
 
-下面是一个 Node.js API 的 image 的 Dockerfile：
+下面是一个生成 Node.js API 的 image 的 Dockerfile：
 
 ```dockerfile
 # Base image that has Node version 12.16.1 installed on a Linux OS.
