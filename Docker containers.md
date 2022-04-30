@@ -75,7 +75,7 @@ $ docker run -p 8000:3000 my-app:1.0
 $ docker stop my-app
 ```
 
-`docker stop` 将会在 container 中发送一个 `SIGTERM` 信号，渐进的终止正在运行的进程。如果在 10S 后，container 任然没有被终止，会继续发送一个 `SIGKILL` 信号，表示会强制终止运行的进程。
+`docker stop` 将会在 container 中发送一个 `SIGTERM` 信号，渐进的终止正在运行的进程。如果在 10 秒后，container 任然没有被终止，会继续发送一个 `SIGKILL` 信号，表示会强制终止运行的进程。
 
 也可以通过 `docker kill` 或者 `docker container kill` 命令，立即发送 `SIGKILL` 信号给 container，立即终止 container 进程。
 
